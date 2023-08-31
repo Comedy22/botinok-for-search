@@ -1,9 +1,14 @@
 import express from 'express';
+import authChecker from '../middlewares/authCheck';
 
-const router = express.Router();
+const indexRouter = express.Router();
 
-router.get('/', (req, res) => {
+indexRouter.get('/', (req, res) => {
   res.render('Layout', {});
 });
 
-export default router;
+indexRouter.get('/signup', authChecker(false), (req, res) => res.render('Layout'));
+indexRouter.get('/signin', authChecker(false), (req, res) => res.render('Layout'));
+indexRouter.get('/account', authChecker(true), (req, res) => res.render('Layout'));
+
+export default indexRouter;
