@@ -17,4 +17,10 @@ regRouter.post('/', async(req,res)=>{
     }
     return res.status(400).json({ message: 'User already exists' });
 })
+
+regRouter.get('/logout', (req,res)=>{
+    req.session.destroy();
+    res.clearCookie('user_sid');
+    return res.sendStatus(200);
+})
 export default regRouter
