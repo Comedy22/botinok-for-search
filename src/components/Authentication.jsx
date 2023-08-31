@@ -13,7 +13,8 @@ export default function Authentication() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     try {
-      const res = await axios.post('/api/login', data);
+      const res = await axios.post('/api/signin', data);
+      console.log(res);
       if (res.status === 200) window.location = '/';
     } catch (error) {
       setErr(error.response.data.massage);
@@ -45,7 +46,7 @@ export default function Authentication() {
         </Row>
         <Row className="justify-content-center mt-3 mb-3 text-center">
           <Col>
-            <Nav.Link href="/signup">Don't have an account? Sign uphfghfgf</Nav.Link>
+            <Nav.Link href="/signup">Don't have an account? Sign up</Nav.Link>
           </Col>
         </Row>
       </Form>
