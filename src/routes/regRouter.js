@@ -30,12 +30,15 @@ regRouter.post('/signin', async (req, res) => {
     const isCorrect = await bcrypt.compare(password, user.hashpass);
     if (!isCorrect) {
         return res.status(400).json({ message: 'Incorrect password' });
-    }
-
-    req.session.user = { ...user.get(), hashpass: undefined };
-    return res.status(200);
-});
-
-
-export default regRouter;
-
+      }
+    
+      req.session.user = { ...user.get(), hashpass: undefined };
+      return res.status(200);
+    });
+    
+regRouter.get('/logout', (req,res)=>{
+    req.session.destroy();
+    res.clearCookie('user_sid');
+    return res.sendStatus(200);
+})
+export default regRouter
