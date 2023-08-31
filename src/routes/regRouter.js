@@ -17,4 +17,22 @@ regRouter.post('/', async(req,res)=>{
     }
     return res.status(400).json({ message: 'User already exists' });
 })
-export default regRouter
+
+regRouter.post('/login', async(req,res) => { 
+    const {email,password} = req.body;
+    const user = await User.findOne({where:{email}});
+    if (!user) {
+        return res.status(400).json({ message: 'Email not found' });
+      }
+      const isCorrect = await bcrypt.compare(password, user.hashpass);
+      if (!isCorrect) {
+        return res.status(400).json({ message: 'Incorrect password' });
+      }
+    
+      req.session.user = { ...user.get(), hashpass: undefined };
+      return res.status(200);
+    });
+    
+
+export default regRouter;
+
