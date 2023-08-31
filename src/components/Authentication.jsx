@@ -13,7 +13,7 @@ export default function Authentication() {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     try {
-      const res = await axios.post('/api/login', data);
+      const res = await axios.post('/api/signin', data);
       if (res.status === 200) window.location = '/';
     } catch (error) {
       setErr(error.response.data.massage);
