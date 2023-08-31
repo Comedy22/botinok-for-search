@@ -1,16 +1,17 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import SignUp from './SignUp';
 import NavBar from './NavBar';
-
+import SignUp from './SignUp';
 
 export default function App() {
   return (
     <>
-    <NavBar />
-    <Routes>
-      <Route path='/' element={<SignUp />} />
+      <NavBar />
+      <Routes>
+        <Route path='/api/signup' element={<SignUp />} />
       </Routes>
-      </>
+    </>
   )
 }
+
+
