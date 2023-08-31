@@ -12,6 +12,9 @@ indexRouter.get('/signup', (req, res) => {
 indexRouter.get('/signin', (req, res) => {
   res.render('Layout', {});
 });
+indexRouter.get('/scrapper', (req, res) => {
+  res.render('Layout', {});
+});
 
 indexRouter.get('/signup', authChecker(false), (req, res) => res.render('Layout'));
 indexRouter.get('/signin', authChecker(false), (req, res) => res.render('Layout'));

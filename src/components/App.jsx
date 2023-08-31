@@ -11,6 +11,7 @@ export default function App() {
       <Routes>
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<Authentication />} />
+        <Route path='/scrapper' />
       </Routes>
     </>
   )
