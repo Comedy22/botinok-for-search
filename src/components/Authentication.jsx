@@ -45,7 +45,7 @@ export default function Authentication() {
         </Row>
         <Row className="justify-content-center mt-3 mb-3 text-center">
           <Col>
-            <Nav.Link href="/signup">Don't have an account? Sign</Nav.Link>
+            <Nav.Link href="/signup">Don't have an account? Sign up</Nav.Link>
           </Col>
         </Row>
       </Form>
