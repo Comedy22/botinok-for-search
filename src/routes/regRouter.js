@@ -30,7 +30,7 @@ regRouter.post('/signin', async (req, res) => {
     }
 
     req.session.user = { ...user.get(), hashpass: undefined };
-    return res.status(200);
+    return res.sendStatus(200);
 });
 
 regRouter.get('/logout', (req, res) => {
