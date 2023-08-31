@@ -43,6 +43,6 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
-app.use('/api/signup', regRouter)
+app.use('/api', regRouter)
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

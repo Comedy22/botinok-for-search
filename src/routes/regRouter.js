@@ -7,7 +7,7 @@ const regRouter = express.Router();
 regRouter.get('/', (req, res) => {
     res.render('Layout', {});
 });
-regRouter.post('/', async (req, res) => {
+regRouter.post('/signup', async (req, res) => {
     const { name, email, password } = req.body;
     const hashpass = await bcrypt.hash(password, 10);
     const [user, created] = await User.findOrCreate({
@@ -36,10 +36,6 @@ regRouter.post('/login', async(req,res) => {
       return res.status(200);
     });
     
-
-
-
-
 regRouter.get('/logout', (req,res)=>{
     req.session.destroy();
     res.clearCookie('user_sid');
