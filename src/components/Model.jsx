@@ -8,6 +8,7 @@ export default function Model({ card }) {
     <Col xs={12} md={6} lg={4} className="mb-4">
       <Card>
         <Card.Img
+          href={`/account/${card.id}`}
           style={{ height: '300px', objectFit: 'cover' }}
           variant="top"
           src={card.img}
