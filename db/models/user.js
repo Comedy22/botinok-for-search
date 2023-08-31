@@ -12,14 +12,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.Product, { foreignKey: 'userId' });
+
 
     }
   }
   User.init({
     name: DataTypes.STRING,
     email: DataTypes.STRING,
-    hashpass: DataTypes.STRING
+    hashpass: DataTypes.STRING,
+    isAdmin: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'User',

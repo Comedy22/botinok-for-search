@@ -10,20 +10,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      item: {
+      model: {
         type: Sequelize.STRING
       },
-      wantedPrice: {
-        type: Sequelize.INTEGER
-      },
-      userId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Users',
-          key: 'id',
-        },
-        onDelete: 'CASCADE',
-        allowNull: false,
+      img: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
