@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Col, Modal, Nav, Row } from 'react-bootstrap';
-import { Form } from 'react-bootstrap/Form';
+import Form from 'react-bootstrap/Form';
 
 export default function Authentication() {
   const [err, setErr] = useState(null);

@@ -11,7 +11,7 @@ export default function NavBar() {
         <Nav.Link href="/signup">Sign up!</Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link href="/api/signin">Sign in!</Nav.Link>
+        <Nav.Link href="/signin">Sign in!</Nav.Link>
       </Nav.Item>
     </Nav>
   )

@@ -9,8 +9,8 @@ export default function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path='/api/signup' element={<SignUp />} />
-        <Route path='/api/signin' element={<Authentication />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/signin' element={<Authentication />} />
       </Routes>
     </>
   )

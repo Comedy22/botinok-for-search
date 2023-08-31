@@ -4,9 +4,6 @@ import { User } from '../../db/models';
 
 const regRouter = express.Router();
 
-regRouter.get('/', (req, res) => {
-    res.render('Layout', {});
-});
 regRouter.post('/signup', async (req, res) => {
     const { name, email, password } = req.body;
     const hashpass = await bcrypt.hash(password, 10);
@@ -30,13 +27,13 @@ regRouter.post('/signin', async (req, res) => {
     const isCorrect = await bcrypt.compare(password, user.hashpass);
     if (!isCorrect) {
         return res.status(400).json({ message: 'Incorrect password' });
-      }
-    
-      req.session.user = { ...user.get(), hashpass: undefined };
-      return res.status(200);
-    });
-    
-regRouter.get('/logout', (req,res)=>{
+    }
+
+    req.session.user = { ...user.get(), hashpass: undefined };
+    return res.status(200);
+});
+
+regRouter.get('/logout', (req, res) => {
     req.session.destroy();
     res.clearCookie('user_sid');
     return res.sendStatus(200);
