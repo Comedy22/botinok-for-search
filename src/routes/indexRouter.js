@@ -9,5 +9,6 @@ indexRouter.get('/', (req, res) => {
 
 indexRouter.get('/signup', authChecker(false), (req, res) => res.render('Layout'));
 indexRouter.get('/signin', authChecker(false), (req, res) => res.render('Layout'));
+indexRouter.get('/account/:id', authChecker(true), (req, res) => res.render('Layout'));
 
 export default indexRouter;

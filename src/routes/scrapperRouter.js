@@ -9,7 +9,7 @@ router.get('/shoes/:id', async (req, res) => {
   const shoes = []
   const { id } = req.params
   switch (id) {
-    case (1):
+    case ('1'):
       try {
         const slamdunk = 'https://slamdunk.shop/shop/muzhskoe/krossovki-mens/asics-gel-lyte-3-borealis-pack/'
         let response = await axios.get(slamdunk)
