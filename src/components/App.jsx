@@ -4,10 +4,10 @@ import NavBar from './NavBar';
 import SignUp from './SignUp';
 import Authentication from './Authentication';
 
-export default function App() {
+export default function App({user}) {
   return (
     <>
-      <NavBar />
+      <NavBar user = {user}/>
       <Routes>
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<Authentication />} />
