@@ -7,6 +7,8 @@ import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/indexRouter';
 import regRouter from './routes/regRouter';
 import cardRouter from './routes/cardRouter'
+import scrapperRouter from './routes/scrapperRouter'
+
 
 require('dotenv').config();
 
@@ -45,4 +47,6 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/api', regRouter)
 app.use('/account', cardRouter)
+app.use('/scrapper', scrapperRouter)
+
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
