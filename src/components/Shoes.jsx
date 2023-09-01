@@ -9,16 +9,19 @@ export default function Shoes() {
   useEffect(() => {
     axios(`/scrapper/shoes/${id}`)
       .then((response) => setSneakers(response.data));
-  })
+  }, [])
   return (
     <Row className="mt-4">
       {sneakers?.map((sneaker) => (
-        <li>
+        <>
+          <img style={{ height: '600px', width: '600px' }} src={`https://trial-sport.ru/${sneaker.img}`} alt={sneaker.name} />
+          <a href={`https://trial-sport.ru/${sneaker.link}`}>
 
-          {sneaker}
+            {sneaker.name}
 
-        </li>
-
+          </a>
+          <p>{sneaker.price ? sneaker.price : null}</p>
+        </>
       ))}
     </Row>
   )

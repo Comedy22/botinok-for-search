@@ -22,9 +22,10 @@ export default function Authentication() {
   return (
 
     <>
-      <Form onSubmit={submitHandler}>
+      <Form onSubmit={submitHandler}
+        style={{ width: '30%', display: 'block', margin: 'auto', marginTop: '10%' }}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label style={{ fontSize: '25px' }}>Email address</Form.Label>
           <Form.Control type="email" name="email" placeholder="Enter email" />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
@@ -32,13 +33,13 @@ export default function Authentication() {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label style={{ fontSize: '25px' }}>Password</Form.Label>
           <Form.Control type="password" name="password" placeholder="Password" />
         </Form.Group>
 
         <Row className="justify-content-center mt-3 mb-3 text-center">
           <Col>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" style={{ fontSize: '25px' }}>
               Submit
             </Button>
           </Col>
